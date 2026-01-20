@@ -25,7 +25,7 @@ describe('App', () => {
 
   it('displays all features', () => {
     render(<App />)
-    expect(screen.getByText(/Vite/i)).toBeInTheDocument()
+    expect(screen.getByText(/Lightning fast build tool/i)).toBeInTheDocument()
     expect(screen.getByText(/React 19/i)).toBeInTheDocument()
     expect(screen.getByText(/Tailwind CSS v4/i)).toBeInTheDocument()
     expect(screen.getByText(/DaisyUI/i)).toBeInTheDocument()

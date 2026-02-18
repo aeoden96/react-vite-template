@@ -17,4 +17,15 @@ const getBasePath = () => {
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: getBasePath(),
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        // Suppress DaisyUI @property warning from LightningCSS
+        if (warning.code === 'PLUGIN_WARNING' && warning.message?.includes('@property')) {
+          return
+        }
+        warn(warning)
+      },
+    },
+  },
 })
